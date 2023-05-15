@@ -17,6 +17,12 @@ public class CafeKiosk {
 
     private final List<Beverage> beverages = new ArrayList<>();
 
+    public int calculateTotalPrice() {;
+        return beverages.stream()
+                .mapToInt(Beverage::getPrice)
+                .sum();
+    }
+
     public void add(Beverage beverage, int count) {
         if (count <= 0) {
             throw new IllegalArgumentException("음료는 1잔 이상만 주문하실 수 있습니다.");
@@ -32,14 +38,6 @@ public class CafeKiosk {
 
     public void clear() {
         beverages.clear();
-    }
-
-    public int calculateTotalPrice() {
-        int totalPrice = 0;
-        for (Beverage beverage : beverages) {
-            totalPrice += beverage.price();
-        }
-        return totalPrice;
     }
 
     public Order createOrderWithCurrentTime(LocalDateTime currentDateTime) {

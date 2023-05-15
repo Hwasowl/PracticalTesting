@@ -2,5 +2,5 @@ package sample.cafekiosk.unit.beverage;
 
 public interface Beverage {
     String getName();
-    int price();
+    int getPrice();
 }

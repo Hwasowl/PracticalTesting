@@ -9,7 +9,7 @@ public class Latte implements Beverage {
     }
 
     @Override
-    public int price() {
+    public int getPrice() {
         return 4500;
     }
 }
