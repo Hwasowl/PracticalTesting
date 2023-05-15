@@ -96,12 +96,18 @@ class CafeKioskTest {
     }
 
     @Test
+    @DisplayName("주문 목록에 담긴 상품들의 총 금액을 계산할 수 있다.")
     void calculateTotalPrice() {
+        // given
         CafeKiosk cafeKiosk = new CafeKiosk();
         Americano americano = new Americano();
         Latte latte = new Latte();
+
+        // when
         cafeKiosk.add(americano, 1);
         cafeKiosk.add(latte, 1);
+
+        // then
         assertThat(cafeKiosk.calculateTotalPrice()).isEqualTo(8500);
     }
 }
