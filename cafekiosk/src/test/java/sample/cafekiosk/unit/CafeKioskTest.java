@@ -1,5 +1,6 @@
 package sample.cafekiosk.unit;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import sample.cafekiosk.unit.beverage.Americano;
 import sample.cafekiosk.unit.beverage.Latte;
@@ -19,6 +20,7 @@ class CafeKioskTest {
     }
 
     @Test
+    @DisplayName("음료 1개 추가하면 주문 목록에 담긴다.")
     void add() {
         CafeKiosk cafeKiosk = new CafeKiosk();
         cafeKiosk.add(new Americano(), 1);
@@ -79,6 +81,10 @@ class CafeKioskTest {
     }
 
     @Test
+    @DisplayName("영업 시작 시간 이전에는 주문을 생성할 수 없다.")
+    // [특정 시간 이전에 주문을 생성하면 실패한다.]
+    // -> [영업 시작 시간 이전에는 주문을 생성할 수 없다.]
+    //  -> 도메인 용어를 사용하여 한층 추상화된 내용을 담고, 테스트의 현상을 중점으로 기술하지 말것.
     void createOrderOutsideOpenTime() {
         CafeKiosk cafeKiosk = new CafeKiosk();
         Americano americano = new Americano();
