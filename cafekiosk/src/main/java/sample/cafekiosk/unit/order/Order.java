@@ -1,7 +1,6 @@
 package sample.cafekiosk.unit.order;
 
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import sample.cafekiosk.unit.beverage.Beverage;
 
@@ -14,5 +13,4 @@ public class Order {
 
     private final LocalDateTime orderDateTime;
     private final List<Beverage> beverages;
-
 }
